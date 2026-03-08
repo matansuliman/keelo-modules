@@ -1,0 +1,15 @@
+services:
+  db-{{ .ProjectName }}:
+    image: postgres:{{ .Values.VERSION }}
+    environment:
+      POSTGRES_DB: {{ .Values.DB_NAME }}
+      POSTGRES_USER: {{ .Values.DB_USER }}
+      POSTGRES_PASSWORD: {{ .Values.DB_PASSWORD }}
+    ports:
+      - "{{ .Values.PORT }}:5432"
+    volumes:
+      - pgdata-{{ .ProjectName }}:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  pgdata-{{ .ProjectName }}:

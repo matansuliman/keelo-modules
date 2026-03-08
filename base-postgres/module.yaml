@@ -1,0 +1,23 @@
+name: base-postgres
+description: "A standard highly-configurable Postgres database module with persistent storage."
+inputs:
+  VERSION:
+    type: string
+    default: "15-alpine"
+    description: "The Postgres image version tag."
+  DB_NAME:
+    type: string
+    required: true
+    description: "The initial database to create."
+  DB_USER:
+    type: string
+    default: "postgres"
+    description: "The database user."
+  DB_PASSWORD:
+    type: string
+    default: "postgres"
+    description: "The database password."
+  PORT:
+    type: int
+    default: 5432
+    description: "The exposed host port for Postgres."

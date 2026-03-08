@@ -1,0 +1,6 @@
+services:
+  redis-{{ .ProjectName }}:
+    image: redis:{{ .Values.VERSION }}
+    ports:
+      - "{{ .Values.PORT }}:6379"
+    restart: unless-stopped
