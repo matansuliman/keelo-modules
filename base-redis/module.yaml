@@ -1,0 +1,11 @@
+name: base-redis
+description: "A standard Redis cache module."
+inputs:
+  VERSION:
+    type: string
+    default: "7-alpine"
+    description: "The Redis image version tag."
+  PORT:
+    type: int
+    default: 6379
+    description: "The exposed host port for Redis."
